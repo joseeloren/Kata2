@@ -2,19 +2,19 @@ package kata2;
 
 import java.util.HashMap;
 
-public class Histogram {
-    private final int[] array;
+public class Histogram <T>{
+    private final T[] array;
 
-    public Histogram(int[] vector) {
+    public Histogram(T[] vector) {
         this.array = vector;
     }    
     
-    public int[] getVector() {
+    public Object[] getVector() {
         return this.array;
     }
     
-    public HashMap<Integer,Integer> getHistogram() {
-        HashMap<Integer,Integer> map = new HashMap();
+    public HashMap<T,Integer> getHistogram() {
+        HashMap<T,Integer> map = new HashMap();
         
          for (int i = 0; i < array.length; i++) {
             if (!map.containsKey(array[i])) 
@@ -28,8 +28,8 @@ public class Histogram {
     @Override
     public String toString() {
         String result = "";
-        HashMap<Integer, Integer> map = getHistogram();
-        for (Integer key : map.keySet()) {
+        HashMap<T, Integer> map = getHistogram();
+        for (T key : map.keySet()) {
             result += key + ": " + map.get(key) +
                     ((map.get(key) != 1) ? " veces" : " vez") + "\n";
         }
