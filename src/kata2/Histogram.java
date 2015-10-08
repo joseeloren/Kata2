@@ -4,18 +4,9 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Histogram <T>{
-    private final HashMap<T,Integer> map;
+    private final HashMap<T,Integer> map  = new HashMap<>();
 
-    public Histogram(HashMap<T, Integer> map) {
-        this.map = map;
-    }
-
-    public Integer get(Object key) {
-        return map.get(key);
-    }
-
-    public Set<T> keySet() {
-        return map.keySet();
+    public Histogram() {
     }
     
     public void incrementKeyValue(T object) {
